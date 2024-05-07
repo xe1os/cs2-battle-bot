@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: qwizii/cs2-battle-bot-api:v0.0.33
+    image: qwizii/cs2-battle-bot-api:latest
     container_name: cs2_battle_bot_api_prod
     command: sh -c "gunicorn cs2_battle_bot.wsgi:application --bind 0.0.0.0:8000"
     expose:
@@ -73,7 +73,7 @@ services:
     depends_on:
       - nginx
   bot:
-    image: qwizii/cs2-battle-bot:v0.0.10
+    image: qwizii/cs2-battle-bot:latest
     container_name: cs2_battle_bot
     env_file:
       - .env.example
